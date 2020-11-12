@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     else
       flash.alert = @article.errors.full_messages
       render :new
-      
+
     end
   end
 

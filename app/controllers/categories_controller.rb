@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
-  before_action :logged?, only: %i[ new create]
-  before_action :admin?, only: %i[ new create]
+  before_action :logged?, only: %i[new create]
+  before_action :admin?, only: %i[new create]
   # GET /categories/1
   # GET /categories/1.json
   def show
@@ -14,7 +14,6 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
   end
-
 
   # POST /categories
   # POST /categories.json
@@ -32,7 +31,6 @@ class CategoriesController < ApplicationController
       end
     end
   end
-
 
   private
 
