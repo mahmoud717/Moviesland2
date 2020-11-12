@@ -4,10 +4,10 @@
         <%= link_to(image_tag(@main_article&.image ), article_path(@main_article), class: "w-100")if @main_article&.image&.attached? %>
         <div class="main-article-description">
             <div class="title">
-                <%= @main_article&.title&.capitalize%>
+                <%= @main_article&.title%>
             </div>
             <div class="body">
-                <%= @main_article&.body&.capitalize&.truncate(100)%>
+                <%= @main_article&.body&.truncate(100)%>
             </div>
         </div>
 
@@ -24,10 +24,10 @@
             <% end %>
             </div>
             <div class="category_name">
-                <p><%= category.name.capitalize%></p>
+                <p><%= category.name%></p>
             </div>
             <div class="category-article-title">
-                <p><%= category.articles.last.title.capitalize%></p>
+                <p><%= category.articles.last.title%></p>
             </div>
         </div>
         <%end%>

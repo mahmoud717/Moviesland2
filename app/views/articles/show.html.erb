@@ -9,7 +9,7 @@
              </div>
          </div>
          <div class="article-title w-100 d-flex justify-content-between">
-             <%= @article.title.capitalize %>
+             <%= @article.title %>
              <div>
                  <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
                  <% if logged? && Vote.find_by(user_id: session["current_user"]["id"] , article_id: @article.id) %>
@@ -22,7 +22,7 @@
          </div>
             
          <div class="article-body w-100">
-             <%= @article.body.capitalize %>
+             <%= @article.body %>
          </div>
      </div>
 
