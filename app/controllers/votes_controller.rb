@@ -1,11 +1,11 @@
 class VotesController < ApplicationController
   before_action :logged?
   def create
-    article = Article.find(params[:article_id])
+    @article = Article.find(params[:article_id])
     user = User.find_by(id: session['current_user']['id'])
     vote = Vote.create(user_id: user.id, article_id: article.id)
-    article.vote_counter += 1
-    vote.save
+    @article.vote_counter += 1
+    @article.save
     redirect_back fallback_location: root_path
   end
 
