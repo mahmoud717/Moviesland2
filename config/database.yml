@@ -21,15 +21,16 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
+
 development:
   <<: *default
-  database: Moviesland2_development
+  database: movies_land_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: Moviesland2
+  #username: movies_land
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Moviesland2_test
+  database: movies_land_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: Moviesland2_production
-  username: Moviesland2
-  password: <%= ENV['MOVIESLAND2_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: movies_land_production
+  username: movies_land
+  password: <%= ENV['MOVIES_LAND_DATABASE_PASSWORD'] %>

@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Moviesland2</title>
+
+<head>
+    <title>MoviesLand</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-  <body>
+<body class="bg-dark position-relative">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0">
+        <%=  link_to( image_tag("logo2.png"), root_path) %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content-lg-between d-flex flex-column flex-lg-row w-100 p-4 p-lg-0 ">
+                <div class="ml-lg-4 d-flex align-items-lg-center flex-column flex-lg-row">
+                    <%= link_to  "Home", root_path, class: "active2 text-decoration-none hoveractive mr-4" %>
+                    <%= link_to  "Create an Article", new_article_path, class: "mb-1 mb-lg-0 mx-0 mx-lg-1 hoveractive text-decoration-none " %>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <%= link_to  "Login |", login_path, class: "mb-0 mx-0 mx-lg-1 hoveractive text-decoration-none "if !logged? %>
+                    <%= link_to  " Signup", new_user_path, class: "mb-0 mx-1 hoveractive text-decoration-none" if !logged?%>
+                    <%= link_to  "Logout | ", logout_path, class: "mb-0 mx-0 mx-lg-1 hoveractive text-decoration-none" if logged? %>
+                    <%= link_to  " Account", user_path(session["current_user"]["id"]), class: "hoveractive text-decoration-none" if logged? %>
+                </div>
+            </ul>
+        </div>
+    </nav>
     <%= yield %>
-  </body>
+    <footer>
+        <div class="footer-container">
+            <ul class="d-flex list-unstyled">
+                <li>
+                    <a href="https://twitter.com/mahmoud26369406">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://linkedin.com/in/mahmoud-m-abbas">
+                        <i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/mahmoud717">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center flex-column flex-md-row">
+                <p class="mr-md-5">Made With <span>&hearts;</span> BY <a href="https://github.com/mahmoud717">Mahmoud
+                        Mohammad</a></p>
+                <p class="ml-md-5">Copyright &copy; 2020</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function expandTextarea(id) {
+        document.getElementById(id).addEventListener('keyup', function() {
+            this.style.overflow = 'hidden';
+            this.style.height = 0;
+            this.style.height = this.scrollHeight + 'px';
+        }, false);
+    }
+
+    expandTextarea('article-form-body');
+</script>
+
 </html>
