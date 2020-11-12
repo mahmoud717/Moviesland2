@@ -30,9 +30,9 @@ It's an app for articles.
 
 ## Built With
 
-- Ruby 2.7.1
-- Rails 6.0.3.2
-- Amazon Web Services for storage
+- Ruby 2.7.2
+- Rails 6.0.3.4
+- Google cloud Services for storage
 - VS Code
 
 ## Demo
@@ -53,12 +53,12 @@ In order to make the program work, you need to have ruby interpreter installed i
 To get a local copy of the repository please run the following commands on your terminal:
 
 ```
-$ cd gamerheaven
+$ cd moviesland2
 ```
 
 ```bash
-$ git clone https://github.com/gurbuzertunga/gamerheaven.git
-$ cd gamerheaven
+$ git clone https://github.com/mahmoud717/moviesland2.git
+$ cd moviesland2
 $ bundle install
 $ yarn install --check-files
 $ rails db:create
@@ -76,11 +76,10 @@ App is designed to work with 4 category section so limit your categories to only
 
 # Author
 
-👤 **Gürbüz Ertunga**
+👤 **Mahmoud Mohammad**
 
-- Github: [@gurbuzertunga](https://github.com/gurbuzertunga)
-- Twitter: [@dantewuhu](https://twitter.com/dantewuhu)
-- Linkedin: [GurbuzErtunga](https://www.linkedin.com/in/gurbuz-ertunga-a607a2a5/)
+- Github: [@mahmoud717](https://github.com/mahmoud717)
+- Linkedin: [Mahmoud Mohammad](https://www.linkedin.com/in/mahmoud-m-abbas/)
 
 ## Show your support
 
