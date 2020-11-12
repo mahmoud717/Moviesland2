@@ -1,0 +1,32 @@
+<div class="container-fluid  w-10 bg-white p-5 ">
+    <%= form_with(model: @article, local: true) do |f| %>
+    <%= render  "shared/notice"%>
+    <div class="container article d-flex flex-column">
+        <div class="article-top w-100 d-flex flex-column justify-content-center align-items-center ">
+            <div class="article-top-container w-100 ">
+                <div class="image w-100">
+                    <%= image_tag(@article.image, class: "w-100") if @article.image.attached? %>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <%= f.file_field(:image, accept: 'image/png,image/gif,image/jpeg', class: "btn mb-3 pl-0") %>
+        </div>
+        <div class="category">
+            <%= f.select(:category_id, options_from_collection_for_select(@categories, :id, :name,:default =>  @article.category.name) ) %>
+
+        </div>
+        <div class="article-form-title w-100">
+            <%= f.text_field :title, :placeholder=> "Title" %>
+        </div>
+        <div class="w-100">
+            <%= f.text_area :body,class: "article-form-body", :placeholder=> "Start Writing..." %>
+        </div>
+        <div class="text-center">
+            <%= f.submit "Edit" , class: "btn btn-lg btn-info"  %>
+            or
+            <%= link_to  "Delete article", @article, method: :delete, class: "btn btn-danger btn-lg", data: { confirm: 'Are you certain you want to delete this article?' }  %>
+        </div>
+    </div>
+    <% end %>
+</div>

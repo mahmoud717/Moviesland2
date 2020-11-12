@@ -1,0 +1,20 @@
+<%= render  "shared/notice"%>
+<%= form_with scope: :login, url: login_path , local: true do |f| %>
+<div class="container-fluid bg-white login-container p-5 ">
+    <div class="container form-container  w-lg-50 bg-white p-5 my-5 ">
+
+        <h1 class="text-center  mb-4 "> Login </h1>
+        <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control", :placeholder=> "Enter your username." %>
+        </div>
+
+        <div class="text-center">
+            <%= f.submit "Login" , class: "btn btn-lg btn-info" %>
+            or
+            <%= link_to  "Signup", new_user_path %>
+        </div>
+
+    </div>
+</div>
+<% end %>

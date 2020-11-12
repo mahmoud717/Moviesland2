@@ -1,0 +1,27 @@
+<div class="container-fluid user-container bg-white p-5">
+    <div class="container text-center p-5">
+        <div class="user-image">
+            <% if @user&.profile_image&.attached? %>
+            <%= image_tag @user.profile_image  %>
+            <% else %>
+            <img class="w-100" src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+            <% end %>
+        </div>
+        <div class="username">
+            @<%= @user.name.capitalize %>
+        </div>
+        <div class="user-email">
+            <%= @user.email.capitalize %>
+        </div>
+
+        <div class="user-buttons">
+            <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-warning"%>
+            <%= link_to 'Delete Account', delete_user_path(@user), class: "btn btn-danger", data: { confirm: 'Are you certain you want to delete this account?' }%>
+        </div>
+        <% if admin? %>
+        <div class="mt-4">
+            <%= link_to 'Categories ', categories_path , class: "btn btn-info"%>
+        </div>
+        <% end %>
+    </div>
+</div>

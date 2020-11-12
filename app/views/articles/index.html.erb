@@ -1,0 +1,33 @@
+<%= render  "shared/notice" %>
+<div class="container-fluid p-0">
+    <div class="main-article w-100 mx-0 ">
+        <%= link_to(image_tag(@main_article&.image ), article_path(@main_article), class: "w-100")if @main_article&.image&.attached? %>
+        <div class="main-article-description">
+            <div class="title">
+                <%= @main_article&.title&.capitalize%>
+            </div>
+            <div class="body">
+                <%= @main_article&.body&.capitalize&.truncate(100)%>
+            </div>
+        </div>
+
+    </div>
+    <div class="categories row w-100 m-0">
+        <% @categories.each do |category| %>
+        <% if category.articles.last %>
+        <div class="category-container col-6 col-lg-3 p-0">
+            <div class="category-image">
+                <%= link_to(image_tag(category.articles.last.image), category_path(category)) %>
+            </div>
+            <div class="category_name">
+                <p><%= category.name.capitalize%></p>
+            </div>
+            <div class="category-article-title">
+                <p><%= category.articles.last.title.capitalize%></p>
+            </div>
+        </div>
+        <%end%>
+        <%end%>
+    </div>
+
+</div>

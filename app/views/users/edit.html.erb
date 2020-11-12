@@ -1,0 +1,26 @@
+<%= form_with(model: @user, local: true) do |form| %>
+<div class="container-fluid bg-white login-container p-5 ">
+    <div class="container form-container  w-lg-50 bg-white p-5 my-5 ">
+
+        <h1 class="text-center  mb-4 "> Edit User </h1>
+        <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "form-control", :placeholder=> "Choose a username." %>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :email %>
+            <%= form.text_field :email, class: "form-control", :placeholder=> "Enter email." %>
+        </div>
+
+        <div class="form-group">
+            <%= form.label :profile_picture %>
+            <%= form.file_field :profile_image, class: "form-control" %>
+        </div>
+
+        <div class="actions text-center mt-4">
+            <%= form.submit "Update" , class: "btn btn-lg btn-info" %>
+        </div>
+    </div>
+</div>
+<% end %>

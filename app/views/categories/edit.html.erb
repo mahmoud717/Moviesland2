@@ -1,0 +1,18 @@
+<%= render  "shared/notice" %>
+<%= form_with(model: category, local: true) do |form| %>
+<div class="container-fluid bg-white login-container p-5 ">
+    <div class="container form-container  w-50 bg-white p-5 my-5 ">
+
+        <h1 class="text-center  mb-4 "> Signup </h1>
+        <div class="form-group">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "form-control", :placeholder=> "Choose a Category name." %>
+        </div>
+
+        <div class="actions text-center mt-4">
+            <%= form.submit "Edit Category" , class: "btn btn-lg btn-info" %>
+
+        </div>
+    </div>
+</div>
+<% end %>

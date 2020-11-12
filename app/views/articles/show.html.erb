@@ -1,0 +1,47 @@
+ <%= render  "shared/notice"%>
+ <div class="container-fluid  w-10 bg-white p-5 ">
+     <div class="container article d-flex flex-column">
+         <div class="article-top w-100 d-flex flex-column justify-content-center align-items-center ">
+             <div class="article-top-container w-100">
+                 <div class="image w-100">
+                     <%= image_tag(@article.image, class: "w-100") if @article.image.attached? %>
+                 </div>
+             </div>
+         </div>
+         <div class="article-title w-100 d-flex justify-content-between">
+             <%= @article.title.capitalize %>
+             <div>
+                 <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
+                 <% if logged? && Vote.find_by(user_id: session["current_user"]["id"] , article_id: @article.id) %>
+                 <%= link_to  "Unvote", unvote_path(@article) , class: "btn btn-danger" %>
+                 <% else %>
+
+                 <%= link_to  "Vote", vote_path(@article) , class: "btn btn-warning" %>
+                 <% end %>
+             </div>
+         </div>
+
+         <div class="article-body w-100">
+             <%= @article.body.capitalize %>
+         </div>
+     </div>
+
+
+
+     <div class="comments-container w-100 container my-3">
+         <hr>
+         <div class='article-comments-section mt-5 w-100'>
+
+             <%= render 'comments/comment'%>
+
+             <div class="comment-form">
+                 <%= form_for(@article.comments.new, url: article_comments_path(@article)) do |form| %>
+                 <%= form.text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
+                 <%= form.submit 'Comment', class: 'btn btn-secondary' %>
+                 <% end %>
+             </div>
+         </div>
+     </div>
+
+
+ </div>
