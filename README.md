@@ -25,6 +25,7 @@ It's an app for articles.
 
 # Index Page ScreenShot
 
+
 ![screenshot](public/Capture.JPG)
 
 
@@ -37,11 +38,13 @@ It's an app for articles.
 
 ## Demo
 
+
 [Live link](https://movies-land007.herokuapp.com//)
 
 ## Video Walkthrough of the app
 
 [Video Walkthrough](https://www.loom.com/share/26c08ebb131a4ffc86934d4ecb05f62c)
+
 
 
 ## Prerequisites
