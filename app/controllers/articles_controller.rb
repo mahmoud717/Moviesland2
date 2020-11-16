@@ -80,8 +80,11 @@ class ArticlesController < ApplicationController
   end
 
   def logged?
-    session.key?('current_user') ? true :
-    redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    if session.key?('current_user')
+      true
+    else
+      redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    end
   end
 
   # Only allow a list of trusted parameters through.
