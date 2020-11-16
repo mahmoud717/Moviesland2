@@ -16,15 +16,15 @@ module ApplicationHelper
   end
 
   def vote_button(article)
-    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if article && logged?
-    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if @article && logged?
+    @vote = Vote.find_by(user_id: session['current_user']['id'], article_id: article.id) if article && logged?
+    @vote = Vote.find_by(user_id: session['current_user']['id'], article_id: article.id) if @article && logged?
     if logged? && @vote
       "<div class='vote_container d-flex flex-row mr-2 '>
         <div class='current_votes d-flex mr-3'>
           <div class='my-auto'>#{article.vote_counter}</div>
           <div class='ml-1 my-auto text-center'>Votes</div>
         </div>
-        #{link_to "Unvote", unvote_path(article), class: "btn btn-danger"}
+        #{link_to 'Unvote', unvote_path(article), class: 'btn btn-danger'}
         </div>".html_safe
     else
       "<div class='vote_container d-flex flex-row mr-2 '>
@@ -32,7 +32,7 @@ module ApplicationHelper
           <div class='my-auto'>#{article.vote_counter}</div>
           <div class='ml-1 my-auto text-center'>Votes</div>
         </div>
-        #{link_to "Vote", vote_path(article), class: "btn btn-warning"}
+        #{link_to 'Vote', vote_path(article), class: 'btn btn-warning'}
         </div>".html_safe
 
     end

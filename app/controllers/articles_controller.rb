@@ -13,7 +13,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  
 
   # GET /articles/new
   def new
@@ -81,7 +80,8 @@ class ArticlesController < ApplicationController
   end
 
   def logged?
-    session.key?('current_user') ? true : redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    session.key?('current_user') ? true :
+    redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
   end
 
   # Only allow a list of trusted parameters through.
