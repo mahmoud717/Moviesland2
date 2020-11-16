@@ -1,3 +1,158 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.main-article {
+  height: 60vh;
+  position: relative;
+
+  a {
+      img {
+      width: 100% !important;
+      height: 100%;
+      object-fit: cover;
+      }
+  }
+
+  .main-article-description {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+
+      .title {
+      font-size: 26px;
+      font-weight: 600;
+      color: #f76108;
+      }
+
+      .body {
+      color: white;
+      font-size: 18px;
+      }
+  }
+}
+
+.comment-show {
+  background-color: rgb(250, 248, 248);
+  padding: 40px;
+  min-height: 200px;
+  margin: 20px 10px;
+
+  .comment-user-image {
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+
+  .comment-content {
+    .comment-user-name {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .comment-body {
+      font-size: 20px;
+      word-break: break-all;
+    }
+  }
+}
+
+.article-form-top {
+  height: 400px !important;
+  background-color: whitesmoke;
+
+  .article-form-top-container {
+    width: 400px;
+
+    .image {
+      padding: 0;
+      width: 400px !important;
+      height: 50px !important;
+    }
+
+    .category {
+      height: 50px;
+      width: 400px;
+    }
+  }
+}
+
+.article-form-title {
+  input {
+    &:active,
+    &:focus {
+      border: rgb(206, 206, 206);
+      outline: none;
+    }
+
+    min-height: 100px;
+    height: auto;
+    margin: 20px 0;
+    width: 100%;
+    background-color: rgb(238, 236, 236);
+    border: none;
+    padding: 30px;
+    font-size: 26px;
+  }
+}
+
+.article-form-body {
+  &:active,
+  &:focus,
+  &:hover {
+    outline: none;
+    border: 4px solid rgb(236, 236, 236);
+    background-color: rgb(253, 250, 250);
+  }
+
+  border: none;
+  background-color: white;
+  font-size: 24px;
+  padding: 30px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  height: 350px;
+}
+
+.article-title {
+  width: 100%;
+  height: auto;
+  font-size: 34px;
+  padding: 20px;
+  margin: 40px 0 !important;
+  font-weight: 600;
+
+  .vote_container {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.article-body {
+  width: 100%;
+  height: auto;
+  font-size: 26px;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.comment-form {
+  margin: 40px 10px;
+
+  form {
+    position: relative;
+
+    textarea.form-control {
+      display: flex;
+      padding: 30px 60px;
+      height: 200px;
+      font-size: 24px;
+    }
+
+    input.btn {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+}

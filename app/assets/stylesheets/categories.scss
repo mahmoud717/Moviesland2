@@ -1,3 +1,104 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.category-container-2 {
+  min-height: 90vh;
+
+  .category-article-container {
+    height: 45vh !important;
+    overflow: hidden;
+
+    .category-article-image {
+      height: 45vh !important;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 45vh !important;
+      }
+    }
+
+    .category-article-details {
+      img {
+        opacity: 0.1;
+        object-fit: fill;
+      }
+
+      position: relative;
+
+      .details {
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        .category-name {
+          font-size: 28px;
+          font-weight: 800;
+          color: #f76108;
+          margin: 15px 0;
+          text-decoration: underline #f76108;
+          text-underline-position: under;
+        }
+
+        .title {
+          font-size: 26px;
+          font-weight: 700;
+          color: #2c1202;
+        }
+
+        .author-name {
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 15px;
+        }
+
+        .body {
+          font-size: 22px;
+          word-break: break-all;
+        }
+
+        .read-more {
+          a {
+            color: #f76108;
+          }
+        }
+      }
+    }
+  }
+}
+
+.categories {
+  .category-container {
+    height: 33vh !important;
+    position: relative !important;
+
+    .category-image {
+      height: 100% !important;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .category_name {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+
+      p {
+        text-decoration: underline yellow;
+      }
+    }
+
+    .category-article-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+    }
+  }
+}
