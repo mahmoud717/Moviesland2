@@ -43,7 +43,7 @@ It's an app for articles.
 
 ## Video Walkthrough of the app
 
-[Video Walkthrough](https://www.loom.com/share/26c08ebb131a4ffc86934d4ecb05f62c)
+[Video Walkthrough](https://www.loom.com/share/bacba70c58fa4d7f83424c6e44dc6d80)
 
 
 
@@ -54,6 +54,8 @@ In order to make the program work, you need to have ruby interpreter installed i
 # Getting Started
 
 To get a local copy of the repository please run the following commands on your terminal:
+
+- you must have postgresql installed on your local machine.
 
 ```
 $ cd moviesland2
