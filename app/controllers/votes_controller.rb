@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   before_action :logged?
- 
+
   def create
     @article = Article.find(params[:article_id])
     user = User.find_by(id: session['current_user']['id'])

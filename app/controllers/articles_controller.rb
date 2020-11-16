@@ -13,9 +13,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  def show
-    @vote = Vote.find_by(user_id: session["current_user"]["id"] , article_id: @article.id)
-  end
+  
 
   # GET /articles/new
   def new

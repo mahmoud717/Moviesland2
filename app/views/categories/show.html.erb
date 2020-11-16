@@ -23,10 +23,14 @@
                     <%= article.title %>
                 </div>
                 <div class="body">
-                    <%= article.body.truncate(120) %>
+                    <%= article.body.truncate(160) %>
                 </div>
+                <div class="d-flex justify-content-between">
+                
                 <div class="read-more pt-3">
                     <%= link_to  "Read more", article_path(article) %>
+                </div>
+                <%= vote_button(article) %>
                 </div>
             </div>
         </div>
@@ -46,10 +50,14 @@
                     <%= article.title %>
                 </div>
                 <div class="body">
-                    <%= article.body.truncate(120) %>
+                    <%= article.body.truncate(160) %>
                 </div>
+                <div class="d-flex justify-content-between">
+                
                 <div class="read-more pt-3">
                     <%= link_to  "Read more", article_path(article) %>
+                </div>
+                <%= vote_button(article) %>
                 </div>
             </div>
         </div>
