@@ -15,7 +15,7 @@ module CategoriesHelper
             #{if article.image.attached?
                 link_to(image_tag(article.image), article_path(article))
               else
-                link_to(image_tag("article.png"), article_path(article))
+                link_to(image_tag('article.png'), article_path(article))
               end }
 
         </div>
@@ -50,7 +50,7 @@ module CategoriesHelper
           #{if article.image.attached?
               link_to(image_tag(article.image), article_path(article))
             else
-              link_to(image_tag("article.png"), article_path(article))
+              link_to(image_tag('article.png'), article_path(article))
             end }
 
       </div>
