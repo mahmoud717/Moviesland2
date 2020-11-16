@@ -22,8 +22,11 @@
                 <div class="title">
                     <%= article.title %>
                 </div>
+                <div class="author-name">
+                    By <%=  link_to "@#{article.user.name}", user_path(article.user)  %> 
+                </div>
                 <div class="body">
-                    <%= article.body.truncate(160) %>
+                    <%= article.body.truncate(150) %>
                 </div>
                 <div class="d-flex justify-content-between">
                 
@@ -50,7 +53,7 @@
                     <%= article.title %>
                 </div>
                 <div class="body">
-                    <%= article.body.truncate(160) %>
+                    <%= article.body.truncate(150) %>
                 </div>
                 <div class="d-flex justify-content-between">
                 

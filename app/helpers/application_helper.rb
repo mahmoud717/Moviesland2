@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def admin?
-    return true if session['current_user']['admin'] == true
+    return true if logged? && session['current_user']['admin'] == true
   end
 
   def user?(user_id)
-    return true if user_id == session['current_user']['id']
+    return true if logged? && user_id == session['current_user']['id']
   end
 
   def user_admin?(user_id)
@@ -16,8 +16,8 @@ module ApplicationHelper
   end
 
   def vote_button(article)
-    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if article
-    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if @article
+    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if article && logged?
+    @vote = Vote.find_by(user_id: session["current_user"]["id"], article_id: article.id) if @article && logged?
     if logged? && @vote
       "<div class='vote_container d-flex flex-row mr-2 '>
         <div class='current_votes d-flex mr-3'>
