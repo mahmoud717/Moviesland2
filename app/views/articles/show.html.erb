@@ -10,14 +10,9 @@
          </div>
          <div class="article-title w-100 d-flex justify-content-between">
              <%= @article.title %>
-             <div>
-                 <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
-                 <% if logged? && Vote.find_by(user_id: session["current_user"]["id"] , article_id: @article.id) %>
-                 <%= link_to  "Unvote", unvote_path(@article) , class: "btn btn-danger" %>
-                 <% else %>
-
-                 <%= link_to  "Vote", vote_path(@article) , class: "btn btn-warning" %>
-                 <% end %>
+             <div class="d-flex align-items-center">
+                <%= vote_button(@article) %>
+                <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
              </div>
          </div>
             
@@ -34,12 +29,7 @@
 
              <%= render 'comments/comment'%>
 
-             <div class="comment-form">
-                 <%= form_for(@article.comments.new, url: article_comments_path(@article)) do |form| %>
-                 <%= form.text_area :content, id: :comment_content, class: 'form-control', placeholder: 'Add new Comment' %>
-                 <%= form.submit 'Comment', class: 'btn btn-secondary' %>
-                 <% end %>
-             </div>
+             <%= render 'comments/form' %>
          </div>
      </div>
 

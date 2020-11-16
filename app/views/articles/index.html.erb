@@ -14,14 +14,9 @@
     </div>
     <div class="categories row w-100 m-0">
         <% @categories.each do |category| %>
-        <% if category.articles.last %>
         <div class="category-container col-6 col-lg-3 p-0">
             <div class="category-image">
-            <% if category.articles.last.image.attached?  %>
-                <%= link_to(image_tag(category.articles.last.image), category_path(category)) %>
-            <% else  %>
-                <%= link_to(image_tag("article.png"), category_path(category)) %>
-            <% end %>
+            <%= category_main_image(category) %>
             </div>
             <div class="category_name">
                 <p><%= category.name%></p>
@@ -30,7 +25,6 @@
                 <p><%= category.articles.last.title%></p>
             </div>
         </div>
-        <%end%>
         <%end%>
     </div>
 
