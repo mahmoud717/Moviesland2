@@ -3,28 +3,28 @@
   position: relative;
 
   a {
-      img {
+    img {
       width: 100% !important;
       height: 100%;
       object-fit: cover;
-      }
+    }
   }
 
   .main-article-description {
-      position: absolute;
-      bottom: 40px;
-      left: 60px;
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
 
-      .title {
+    .title {
       font-size: 26px;
       font-weight: 600;
       color: #f76108;
-      }
+    }
 
-      .body {
+    .body {
       color: white;
       font-size: 18px;
-      }
+    }
   }
 }
 
