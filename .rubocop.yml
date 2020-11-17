@@ -29,9 +29,11 @@ Metrics/BlockLength:
 
 Style/Documentation:
   Enabled: false
-Layout/EndOfLine:
-  Enabled: false
 Style/ClassAndModuleChildren:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
   Enabled: false
 Style/EachForSimpleLoop:
   Enabled: false
@@ -50,8 +52,6 @@ Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
 Lint/RaiseException:
-  Enabled: false
-Layout/LineLength:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false

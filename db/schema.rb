@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20_201_111_185_654) do
     t.datetime 'updated_at', precision: 6, null: false
     t.string 'category_id'
     t.integer 'vote_counter'
+    t.references :category_id
+    t.references :auther_id
   end
 
   create_table 'categories', force: :cascade do |t|
@@ -59,6 +61,8 @@ ActiveRecord::Schema.define(version: 20_201_111_185_654) do
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
     t.string 'content'
+    t.references :user_id
+    t.references :article_id
   end
 
   create_table 'users', force: :cascade do |t|
@@ -74,6 +78,8 @@ ActiveRecord::Schema.define(version: 20_201_111_185_654) do
     t.integer 'article_id'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.references :user_id
+    t.references :article_id
   end
 
   add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'

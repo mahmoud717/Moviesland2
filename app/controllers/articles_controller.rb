@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(image_attachment: :blob)
     @main_article = Article.order(vote_counter: :desc).first
 
     @categories = Category.all
@@ -13,9 +13,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  def show
-    @vote = Vote.find_by(user_id: session["current_user"]["id"] , article_id: @article.id)
-  end
 
   # GET /articles/new
   def new
@@ -83,7 +80,11 @@ class ArticlesController < ApplicationController
   end
 
   def logged?
-    session.key?('current_user') ? true : redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    if session.key?('current_user')
+      true
+    else
+      redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    end
   end
 
   # Only allow a list of trusted parameters through.

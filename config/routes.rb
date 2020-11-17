@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments, only: [:create]
   end
-  resources :users
+  resources :users, except: [ :index  ]
   resources :categories, only: %i[new create show]
   get 'logout', to: 'sessions#destroy'
   get 'login', to: 'sessions#new'

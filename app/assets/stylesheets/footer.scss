@@ -1,0 +1,37 @@
+footer {
+  bottom: 0;
+  background-color: #383838;
+  padding: 10px 0;
+  width: 100%;
+  position: absolute;
+
+  .footer-container {
+    max-width: 1500px;
+    margin: auto;
+    color: white;
+
+    div {
+      * {
+        span {
+          color: red;
+        }
+      }
+
+      a {
+        color: rgb(189, 189, 189);
+        text-decoration: none;
+      }
+    }
+
+    ul {
+      margin: 20px 0;
+
+      li {
+        a {
+          color: white;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
