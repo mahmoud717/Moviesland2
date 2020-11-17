@@ -1,3 +1,27 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.login-container {
+  height: 100vh;
+}
+
+.user-container {
+  height: 100vh;
+
+  .username {
+    font-weight: 500;
+    font-size: 28px;
+    margin: 20px;
+  }
+
+  .user-email {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+
+  .user-image {
+    * {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+    }
+  }
+}

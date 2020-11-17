@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to article_path(params[:article_id]), notice: 'Comment was successfully created.'
     else
+      flash.alert = @comment.errors.full_messages
       redirect_to articles_path, alert: @comment.errors.full_messages.join('. ').to_s
     end
   end

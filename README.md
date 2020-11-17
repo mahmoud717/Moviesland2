@@ -25,7 +25,8 @@ It's an app for articles.
 
 # Index Page ScreenShot
 
-![screenshot](public/capture.jpg)
+
+![screenshot](public/Capture.JPG)
 
 
 ## Built With
@@ -37,11 +38,13 @@ It's an app for articles.
 
 ## Demo
 
-[Live link](https://mygamerheaven.herokuapp.com/)
+
+[Live link](https://movies-land007.herokuapp.com//)
 
 ## Video Walkthrough of the app
 
-[Video Walkthrough](https://www.loom.com/share/c62b383705514abca142d3e514bc43a4)
+[Video Walkthrough](https://www.loom.com/share/bacba70c58fa4d7f83424c6e44dc6d80)
+
 
 
 ## Prerequisites
@@ -51,6 +54,8 @@ In order to make the program work, you need to have ruby interpreter installed i
 # Getting Started
 
 To get a local copy of the repository please run the following commands on your terminal:
+
+- you must have postgresql installed on your local machine.
 
 ```
 $ cd moviesland2

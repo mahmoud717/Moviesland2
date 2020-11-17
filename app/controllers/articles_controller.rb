@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.includes(image_attachment: :blob)
     @main_article = Article.order(vote_counter: :desc).first
 
     @categories = Category.all
@@ -13,7 +13,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   # GET /articles/1.json
-  def show; end
 
   # GET /articles/new
   def new
@@ -35,7 +34,9 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
-      render :new, notice: 'Article was not created.'
+      flash.alert = @article.errors.full_messages
+      render :new
+
     end
   end
 
@@ -79,7 +80,11 @@ class ArticlesController < ApplicationController
   end
 
   def logged?
-    session.key?('current_user') ? true : redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    if session.key?('current_user')
+      true
+    else
+      redirect_to(login_path, notice: 'You have to Login to be able to create an article.')
+    end
   end
 
   # Only allow a list of trusted parameters through.
