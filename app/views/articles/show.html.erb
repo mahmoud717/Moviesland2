@@ -4,18 +4,18 @@
          <div class="article-top w-100 d-flex flex-column justify-content-center align-items-center ">
              <div class="article-top-container w-100">
                  <div class="image w-100">
-                     <%= image_tag(@article.image, class: "w-100") if @article.image.attached? %>
+                     <%= image_tag(@article.image_url, class: "w-100") if @article.image %>
                  </div>
              </div>
          </div>
          <div class="article-title w-100 d-flex justify-content-between">
              <%= @article.title %>
              <div class="d-flex align-items-center">
-                <%= vote_button(@article) %>
-                <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
+                 <%= vote_button(@article) %>
+                 <%= link_to  "Edit", edit_article_path , class: "btn btn-info" if logged? &&  user_admin?(@article.user.id) %>
              </div>
          </div>
-            
+
          <div class="article-body w-100">
              <%= @article.body %>
          </div>

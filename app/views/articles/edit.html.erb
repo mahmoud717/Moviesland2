@@ -5,7 +5,7 @@
         <div class="article-top w-100 d-flex flex-column justify-content-center align-items-center ">
             <div class="article-top-container w-100 ">
                 <div class="image w-100">
-                    <%= image_tag(@article.image, class: "w-100") if @article.image.attached? %>
+                    <%= image_tag(@article.image_url, class: "w-100") if @article.image %>
                 </div>
             </div>
         </div>

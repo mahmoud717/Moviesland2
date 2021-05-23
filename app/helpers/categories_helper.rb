@@ -1,7 +1,7 @@
 module CategoriesHelper
   def category_main_image(category)
-    if category.articles.last.image.attached?
-      link_to(image_tag(category.articles.last.image), category_path(category))
+    if category.articles.last.image
+      link_to(image_tag(category.articles.last.image_url), category_path(category))
     else
       link_to(image_tag('article.png'), category_path(category))
     end
@@ -12,8 +12,8 @@ module CategoriesHelper
     if @count <= 2
       "<div class='col-12 col-lg-6 category-article-container m-0 p-0 row'>
         <div class='category-article-image w-100 col-6 m-0 p-0'>
-            #{if article.image.attached?
-                link_to(image_tag(article.image), article_path(article))
+            #{if article.image.
+                link_to(image_tag(article.image_url), article_path(article))
               else
                 link_to(image_tag('article.png'), article_path(article))
               end }
@@ -47,8 +47,8 @@ module CategoriesHelper
     else
       "<div class='col-12 col-lg-6 category-article-container m-0 p-0 row'>
       <div class='category-article-image w-100 col-6 order-1 m-0 p-0'>
-          #{if article.image.attached?
-              link_to(image_tag(article.image), article_path(article))
+          #{if article.image.
+              link_to(image_tag(article.image_url), article_path(article))
             else
               link_to(image_tag('article.png'), article_path(article))
             end }

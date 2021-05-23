@@ -1,10 +1,10 @@
 <div class="container-fluid user-container bg-white p-5">
     <div class="container text-center p-5">
         <div class="user-image">
-            <% if @user&.profile_image&.attached? %>
-            <%= image_tag @user.profile_image  %>
+            <% if @user&.image %>
+            <%= image_tag @user.image_url  %>
             <% else %>
-            <img  src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
             <% end %>
         </div>
         <div class="username">

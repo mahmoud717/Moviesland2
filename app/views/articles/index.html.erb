@@ -1,7 +1,7 @@
 <%= render  "shared/notice" %>
 <div class="container-fluid p-0">
     <div class="main-article w-100 mx-0 ">
-        <%= link_to(image_tag(@main_article&.image ), article_path(@main_article), class: "w-100")if @main_article&.image&.attached? %>
+        <%= link_to(image_tag(@main_article.image_url), article_path(@main_article), class: "w-100")if @main_article&.image&.attached? %>
         <div class="main-article-description">
             <div class="title">
                 <%= @main_article&.title%>
@@ -16,7 +16,7 @@
         <% @categories.each do |category| %>
         <div class="category-container col-6 col-lg-3 p-0">
             <div class="category-image">
-            <%= category_main_image(category) %>
+                <%= category_main_image(category) %>
             </div>
             <div class="category_name">
                 <p><%= category.name%></p>

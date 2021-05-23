@@ -7,15 +7,3 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
-
-google:
-  service: GCS
-  project: MOVIES-LAND2
-  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
-  bucket: movies_land_717
-
-google_dev:
-  service: GCS
-  project: MOVIES-LAND2
-  credentials: <%= Rails.root.join("config/secrets/MOVIES-LAND.json") %>
-  bucket: movies_land_717

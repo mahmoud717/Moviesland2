@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.includes(image_attachment: :blob)
+    @articles = Article.all
     @main_article = Article.order(vote_counter: :desc).first
 
     @categories = Category.all
