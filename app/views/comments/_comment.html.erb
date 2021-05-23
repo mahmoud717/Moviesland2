@@ -1,8 +1,8 @@
 <% @article.comments.each do |comment|  %>
 <div class="comment-show w-100 d-flex">
     <div class="comment-user-image">
-        <% if comment.user.profile_image.attached? %>
-        <%= image_tag(comment.user&.profile_image) %>
+        <% if comment.user.image %>
+        <%= image_tag(comment.user.image_url) %>
         <% else %>
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png">
         <% end %>
