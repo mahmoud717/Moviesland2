@@ -1,6 +1,6 @@
 module CategoriesHelper
   def category_main_image(category)
-    if category.articles.last.image
+    if category.articles&.last&.image
       link_to(image_tag(category.articles.last.image_url), category_path(category))
     else
       link_to(image_tag('article.png'), category_path(category))
@@ -12,7 +12,7 @@ module CategoriesHelper
     if @count <= 2
       "<div class='col-12 col-lg-6 category-article-container m-0 p-0 row'>
         <div class='category-article-image w-100 col-6 m-0 p-0'>
-            #{if article.image.
+            #{if article.image
                 link_to(image_tag(article.image_url), article_path(article))
               else
                 link_to(image_tag('article.png'), article_path(article))

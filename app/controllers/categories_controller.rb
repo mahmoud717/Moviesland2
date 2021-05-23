@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @articles = @category.articles.includes(image_attachment: :blob).order(created_at: :desc).limit(4)
+    @articles = @category.articles.order(created_at: :desc).limit(4)
     @count = 0
   end
 
