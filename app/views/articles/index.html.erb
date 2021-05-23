@@ -22,7 +22,7 @@
                 <p><%= category.name%></p>
             </div>
             <div class="category-article-title">
-                <p><%= category.articles.last.title%></p>
+                <p><%= category.articles.last.title if category.articles.last%></p>
             </div>
         </div>
         <%end%>
